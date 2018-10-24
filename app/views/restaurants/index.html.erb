@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurant Index</title>
+</head>
+
+<body>
+  <h1>All Restaurants</h1>
+
+  <ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+    <h3> <%= link_to restaurant.name, restaurant_path(restaurant), class: "btn btn-primary" %> </h3>
+    <p> <%= "#{restaurant.category.capitalize} restaurant" %>
+    <p> <%= "#{restaurant.address}" %> </p>
+    <p> <%= "Phone number: #{restaurant.phone_number}" %> </p>
+    </li>
+    <% end %>
+  </ul>
+
+</body>
+
+</html>
